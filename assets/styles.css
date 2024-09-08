@@ -7,6 +7,9 @@
     --Color-bg-fill-fill-success-secondary: #CDFEE1;
     --Color-text-text-success: #0C5132;
     --Color-border-border: #E3E3E3;
+    --Color-text-secondary: #616161;
+    --Color-bg-fill-fill-disabled: #0000000D;
+    --Color-text-text-disabled: #B5B5B5;
 }
 
 body {
@@ -39,9 +42,114 @@ body {
     color: var(--Color-text-text);
 }
 
+.body-lg {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 20px;
+    text-align: left;
+    font-variation-settings: 'slnt'0;
+    color: var(--Color-text-secondary);
+}
+
+.body-lg {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 20px;
+    text-align: left;
+    font-variation-settings: 'slnt'0;
+    color: var(--Color-text-text);
+}
+
+.body-lg-m {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 20px;
+    text-align: left;
+    font-variation-settings: 'slnt'0;
+    color: var(--Color-text-text);
+}
+
+.body-lg-b {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 20px;
+    text-align: left;
+    font-variation-settings: 'slnt'0;
+    color: var(--Color-text-text);
+}
+
+.body-sm {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 450;
+    line-height: 16px;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+    color: var(--Color-text-text);
+}
+
 .link {
     text-decoration: none;
     color: var(--Color-text-link-link);
+}
+
+.btn {
+    padding: 6px 12px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 16px;
+    text-align: left;
+    font-variation-settings: 'slnt'0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.btn.disabled {
+    background: var(--Color-bg-fill-fill-disabled);
+    color: var(--Color-text-text-disabled);
+}
+
+.btn-primary {
+    color: white;
+    background-color: var(--Color-text-text);
+}
+
+.btn-secondary {
+    color: var(--Color-text-text);
+    background-color: white;
+    box-shadow: 0px 1px 0px 0px #E3E3E3 inset, 1px 0px 0px 0px #E3E3E3 inset, -1px 0px 0px 0px #E3E3E3 inset, 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+.input-field {
+    padding: 12px;
+    background: var(--Color-input-bg-surface, #FDFDFD);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.input {
+    background: var(--Color-input-bg-surface, #FDFDFD);
+    border: 0.66px solid var(--Color-input-border, #8A8A8A);
+    height: 32px;
+    padding-left: 12px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .tabs {
@@ -120,4 +228,69 @@ tr:last-child td {
 .status-badge.active {
     background: var(--Color-bg-fill-fill-success-secondary);
     color: var(--Color-text-text-success);
+}
+
+.header {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-ul {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-li:last-child .header-nav-link {
+    color: var(--Color-text-text);
+}
+
+.header-nav-li:not(:first-child) {
+    margin-left: 12px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header-controls .btn:not(:first-child) {
+    margin-left: 8px;
+}
+
+.empty-state {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 36px;
+    padding-top: 67px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.empty-state-img {
+    margin-bottom: 28px;
+}
+
+.empty-state-underline {
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.btn[aria-controls="create-formula"] {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
