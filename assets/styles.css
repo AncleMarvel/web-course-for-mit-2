@@ -591,6 +591,18 @@ tr:last-child td {
   .tab {
     padding: 12px;
   }
+  .formula-main {
+    flex-direction: column;
+  }
+  .formula-column {
+    width: 100%;
+  }
+  .formula-settings-card {
+    margin-top: 12px;
+  }
+  .formula-settings-card {
+    padding: 12px;
+  }
 }
 @media (max-width: 500px) {
   .container {
