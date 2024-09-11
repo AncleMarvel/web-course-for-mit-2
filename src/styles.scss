@@ -541,4 +541,40 @@ tr:last-child td {
     .container {
         padding: 0 16px;
     }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .header-controls {
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    .empty-state {
+        margin-top: 12px;
+    }
+
+    .formulas {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .formula-btn {
+        width: 20px;
+
+        &:first-child {
+            margin-right: 8px;
+        }
+    }
+}
+
+
+// intermediate between Mobile L (475px) and less than tablets
+@media (max-width: 375px) {
+    .empty-state-text {
+        text-align: center;
+    }
 }
