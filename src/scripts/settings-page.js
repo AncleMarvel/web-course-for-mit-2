@@ -12,6 +12,7 @@ const selectors = {
     settingRemoveButton: '[aria-controls="create-remove"]',
 }
 
+// start here
 const initialState = document.querySelector(selectors.stateJson).textContent;
 
 // Initial state is a JSON string, so we need to parse it to get the actual object.
@@ -43,8 +44,6 @@ function removeSettingHandler(settingLineElement) {
  * @param {Object} setting - The setting object to render.
  */
 function renderSettingElement(setting) {
-    if (state.settings.length === 0) return;
-
     // 1. Find the setting template element.
     const settingTemplateElement = document.querySelector(selectors.settingTemplate);
     console.log('✌️settingTemplateElement --->', settingTemplateElement);
@@ -96,7 +95,7 @@ function toggleEmptyState() {
 
 toggleEmptyState();
 
-state.settings.forEach((setting) => {
+state.settings.forEach(setting => {
     // Call the function to render the settings elements.
     renderSettingElement(setting);
 });
