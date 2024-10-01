@@ -102,7 +102,7 @@ function editFormulaHandler(formula) {
 /**
  * Removes a formula from the state and the DOM.
  * 
- * @param {Object} formula - The formula object to remove.
+ * @param {Object} formulaTemplateElement - DOM element.
  */
 function removeFormulaHandler(formulaTemplateElement) {
     const formulaId = formulaTemplateElement.id;
