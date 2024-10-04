@@ -11,6 +11,8 @@
   --Color-bg-fill-fill-disabled: #0000000d;
   --Color-text-text-disabled: #b5b5b5;
   --Color-input-border: #8a8a8a;
+  --Color-red-fill: #E51C00;
+  --Color-red-text: #8E1F0B;
 }
 
 body {
@@ -32,6 +34,7 @@ body {
   letter-spacing: -0.2px;
   text-align: left;
   color: var(--Color-text-text);
+  margin-top: 40px;
 }
 
 .body-md {
@@ -349,6 +352,23 @@ tr:last-child td {
 }
 .header-controls .btn:not(:first-child) {
   margin-left: 8px;
+}
+
+[aria-controls=toggle] .inner-text-disable {
+  display: none;
+}
+[aria-controls=toggle] .inner-text-activate {
+  display: block;
+}
+[aria-controls=toggle][data-status=active] {
+  background-color: var(--Color-red-fill);
+  color: var(--Color-red-text);
+}
+[aria-controls=toggle][data-status=active] .inner-text-disable {
+  display: block;
+}
+[aria-controls=toggle][data-status=active] .inner-text-activate {
+  display: none;
 }
 
 .empty-state {

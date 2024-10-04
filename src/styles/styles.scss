@@ -13,6 +13,8 @@
     --Color-bg-fill-fill-disabled: #0000000d;
     --Color-text-text-disabled: #b5b5b5;
     --Color-input-border: #8a8a8a;
+    --Color-red-fill: #E51C00;
+    --Color-red-text: #8E1F0B;
 }
 
 body {
@@ -310,6 +312,27 @@ tr:last-child td {
 
     .btn:not(:first-child) {
         margin-left: 8px;
+    }
+}
+
+[aria-controls="toggle"] {
+    .inner-text-disable {
+        display: none;
+    }
+    .inner-text-activate {
+        display: block;
+    }
+
+    &[data-status="active"] {
+        background-color: var(--Color-red-fill);
+        color: var(--Color-red-text);
+
+        .inner-text-disable {
+            display: block;
+        }
+        .inner-text-activate {
+            display: none;
+        }
     }
 }
 

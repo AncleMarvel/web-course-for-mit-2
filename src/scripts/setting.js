@@ -1,20 +1,4 @@
-/**
- * Functionality on setting-edit page:
- * 
- * redirects
- * 1. Create a formula - redirects to a formula creation page
- * 2. Edit a formula - redirects to a formula edit page
- * 
- * on this page
- * 3. Remove a formula - removes the formula from the state and the DOM
- * 4. Render formulas list:
- *  - Find the formula template element
- *  - Deep clone the formula template element
- *  - Change the content of the clonned formula template element
- *  - Append the clonned formula template element to the formulas list element
- * 5. Toggle empty state
- * 6. Edit setting title
- */
+const RESET_STATE = false;
 
 /**
  * Get the URL search parameters as an object.
@@ -48,6 +32,7 @@ const selectors = {
 
     discardButton: '[aria-controls="discard"]',
     saveButton: '[aria-controls="save"]',
+    toggleButton: '[aria-controls="toggle"]',
 
     formulasListWrapper: '.formulas',
     formulasList: '.formulas-list',
@@ -58,11 +43,65 @@ const selectors = {
     formulaRemoveButton: '[aria-controls="remove-formula"]',
 }
 
-const initialState = document.querySelector(selectors.stateJson).textContent;
+/**
+ * Gets the state object from the local storage or the initial state from the DOM if the state is not found in the local storage.
+ * 
+ * It also saves the state to the local storage if the state is not found in the local storage.
+ * 
+ * @returns {Object} - The state object.
+ */
+function getState() {
+    const existedState = localStorage.getItem('state');
+    let state;
+    if (existedState && !RESET_STATE) {
+        // local storage saves the state as a string, so we need to parse it to get the actual object and we return parsed value - an object
+        state = JSON.parse(existedState);
+    } else {
+        const initialState = document.querySelector(selectors.stateJson).textContent;
+        // Initial state is a JSON string, so we need to parse it to get the actual object.
+        state = JSON.parse(initialState);
+    }
 
-const state = JSON.parse(initialState);
+    localStorage.setItem('state', JSON.stringify(state));
+    return state;
+}
 
-let currentSettings = state.settings.find((setting) => setting.id == settingId);
+const state = getState();
+
+/**
+ * Updates the state in the local storage.
+ */
+function updateState() {
+    localStorage.setItem('state', JSON.stringify(state));
+}
+
+/**
+ * Gets the current setting object from the state.
+ * 
+ * If the setting is not found in the state, it creates a new setting object and adds it to the state.
+ * 
+ * @returns {Object} - The current setting object.
+ */
+function getCurrentSetting() {
+    const settingTemplate = {
+        id: Date.now(),
+        title: 'Setting title',
+        status: 'draft',
+        formulas: [],
+    }
+
+    // if no setting found, create a new setting object
+    let setting = state.settings.find((setting) => setting.id == settingId);
+
+    if (!setting) {
+        setting = { ...settingTemplate };
+        state.settings.push(setting);
+        updateState();
+    }
+    return setting;
+}
+
+let currentSettings = getCurrentSetting();
 
 // deep clone the current setting object for the functionality to revert the changes
 let savedSettings = { ...currentSettings };
@@ -73,6 +112,7 @@ let isEditing = false;
 const titleInput = document.querySelector(selectors.titleInput);
 const discardButton = document.querySelector(selectors.discardButton);
 const saveButton = document.querySelector(selectors.saveButton);
+const toggleButton = document.querySelector(selectors.toggleButton);
 const formulasListElement = document.querySelector(selectors.formulasList);
 const formulasListWrapper = document.querySelector(selectors.formulasListWrapper);
 
@@ -81,7 +121,7 @@ const formulasListWrapper = document.querySelector(selectors.formulasListWrapper
  */
 function toggleEmptyState() {
     const emptyStateElement = document.querySelector(selectors.emptyState);
-    if (currentSettings.formulas.length === 0) {
+    if (currentSettings?.formulas.length === 0) {
         emptyStateElement.classList.remove('hidden');
         formulasListWrapper.classList.add('hidden');
     } else {
@@ -109,6 +149,7 @@ function removeFormulaHandler(formulaTemplateElement) {
     currentSettings.formulas = currentSettings.formulas.filter((formula) => formula.id != formulaId);
     formulaTemplateElement.remove();
     toggleEmptyState();
+    updateState();
 }
 
 /**
@@ -144,8 +185,9 @@ function renderFormulaElement(formula) {
  */
 function renderPage() {
     toggleEmptyState();
-    titleInput.value = currentSettings.title;
-    currentSettings.formulas.forEach((formula) => {
+    titleInput.value = currentSettings?.title;
+    toggleButton.dataset.status = currentSettings?.status;
+    currentSettings?.formulas.forEach((formula) => {
         renderFormulaElement(formula);
     });
 }
@@ -186,12 +228,23 @@ function discardChangesHandler() {
 }
 
 /**
+ * Toggle setting status handler.
+ */
+function toggleSettingHandler() {
+    const settingStatus = currentSettings.status === 'active' ? 'draft' : 'active';
+    currentSettings.status = settingStatus;
+    toggleButton.dataset.status = settingStatus;
+    updateState();
+}
+
+/**
  * Save changes handler.
  */
 function saveChangesHandler() {
     isEditing = false;
     savedSettings = { ...currentSettings };
     handleChanges();
+    updateState();
 }
 
 titleInput?.addEventListener('input', (event) => {
@@ -200,5 +253,6 @@ titleInput?.addEventListener('input', (event) => {
 
 discardButton?.addEventListener('click', discardChangesHandler);
 saveButton?.addEventListener('click', saveChangesHandler);
+toggleButton?.addEventListener('click', toggleSettingHandler);
 
 renderPage();
