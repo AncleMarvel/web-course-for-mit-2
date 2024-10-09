@@ -1,3 +1,6 @@
+// set to true if you want to reset the state to the initial state from the DOM.
+const RESET_STATE = false;
+
 // Selectors from index.html we use to interact with the DOM.
 const selectors = {
     stateJson: '#state',
@@ -12,14 +15,36 @@ const selectors = {
     settingRemoveButton: '[aria-controls="create-remove"]',
 }
 
-// start here
-const initialState = document.querySelector(selectors.stateJson).textContent;
+/**
+ * Gets the state object from the local storage or the initial state from the DOM if the state is not found in the local storage.
+ * 
+ * It also saves the state to the local storage if the state is not found in the local storage.
+ * 
+ * @returns {Object} - The state object.
+ */
+function getState() {
+    const existedState = localStorage.getItem('state');
+    let state;
+    if (existedState && !RESET_STATE) {
+        // local storage saves the state as a string, so we need to parse it to get the actual object and we return parsed value - an object
+        state = JSON.parse(existedState);
+    } else {
+        const initialState = document.querySelector(selectors.stateJson).textContent;
+        // Initial state is a JSON string, so we need to parse it to get the actual object.
+        state = JSON.parse(initialState);
+    }
 
-// Initial state is a JSON string, so we need to parse it to get the actual object.
-const state = JSON.parse(initialState);
+    localStorage.setItem('state', JSON.stringify(state));
+    return state;
+}
 
-function createSettingHandler() {
-    
+const state = getState();
+
+/**
+ * Updates the state in the local storage.
+ */
+function updateState() {
+    localStorage.setItem('state', JSON.stringify(state));
 }
 
 /**
@@ -34,6 +59,7 @@ function removeSettingHandler(settingLineElement) {
     const settingIndexToRemove = state.settings.findIndex((setting) => setting.id === settingLineElement.id);
     state.settings.splice(settingIndexToRemove, 1);
     toggleEmptyState();
+    updateState();
 }
 
 /**
@@ -46,7 +72,6 @@ function removeSettingHandler(settingLineElement) {
 function renderSettingElement(setting) {
     // 1. Find the setting template element.
     const settingTemplateElement = document.querySelector(selectors.settingTemplate);
-    console.log('✌️settingTemplateElement --->', settingTemplateElement);
 
     // 2. Deep clone the setting template element.
     const settingTemplateElementCopy = settingTemplateElement.cloneNode(true);
@@ -74,7 +99,6 @@ function renderSettingElement(setting) {
 
     // 4. Append the clonned setting template element to the settings list element.
     const settingsListElement = document.querySelector(selectors.settingsList);
-    console.log('✌️settingsListElement --->', settingsListElement);
     settingsListElement.appendChild(settingTemplateElementCopy);
 }
 
