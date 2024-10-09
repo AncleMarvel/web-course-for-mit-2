@@ -136,7 +136,7 @@ function toggleEmptyState() {
  * @param {Object} formula - from the formulas list of the current setting.
  */
 function editFormulaHandler(formula) {
-    window.location.href = `/formula.html?id=${formula.id}`;
+    window.location.href = `/formula.html?id=${formula.id}&settingId=${currentSettings.id}`;
 }
 
 /**
@@ -166,7 +166,7 @@ function renderFormulaElement(formula) {
     formulaTemplateElementCopy.id = formula.id;
     const formulaTitleElement = formulaTemplateElementCopy.querySelector(selectors.formulaTitle);
     formulaTitleElement.innerText = formula.title;
-    formulaTitleElement.href = `/formula.html?id=${formula.id}`;
+    formulaTitleElement.href = `/formula.html?id=${formula.id}&settingId=${currentSettings.id}`;
 
     const formulaEditButtonElement = formulaTemplateElementCopy.querySelector(selectors.formulaEditButton);
     formulaEditButtonElement.addEventListener('click', (e) => {
