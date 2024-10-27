@@ -28,8 +28,6 @@ export default defineConfig({
 
 ### Get admin api key
 
-Example: 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
-
 It's needed for requests to your shop
 
 1. Go to https://www.shopify.com/partners

@@ -10,3 +10,6 @@ export const getData = async () => {
         return null;
     }
 };
+
+
+// Example: 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
