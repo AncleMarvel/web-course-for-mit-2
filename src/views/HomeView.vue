@@ -23,7 +23,7 @@
             </div>
 
             <div class="empty-state" v-if="!settings?.length || settings.length < 1">
-                <img src="./assets/icon-empty.svg" alt="empty-state" class="empty-state-img">
+                <img src="../assets/icon-empty.svg" alt="empty-state" class="empty-state-img">
                 <p class="empty-state-text body-lg-b">
                     Oopsie, seems that you have no settings yet
                 </p>
