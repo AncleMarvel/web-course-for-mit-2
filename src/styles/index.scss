@@ -1,4 +1,4 @@
-@import "./mixins.scss";
+@use "./mixins.scss";
 
 :root {
     --Color-text-text: #303030;
@@ -40,25 +40,25 @@ body {
 }
 
 .body-md {
-    @include body-md;
+    @include mixins.body-md;
 }
 
 .body-md-b {
-    @include body-md;
+    @include mixins.body-md;
     font-weight: 650;
 }
 
 .body-lg {
-    @include body-lg;
+    @include mixins.body-lg;
 }
 
 .body-lg-m {
-    @include body-lg;
+    @include mixins.body-lg;
     font-weight: 550;
 }
 
 .body-lg-b {
-    @include body-lg;
+    @include mixins.body-lg;
     font-weight: 650;
 }
 
@@ -82,6 +82,12 @@ body {
     color: var(--Color-text-text);
 }
 
+button.link {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .link {
     text-decoration: none;
     color: var(--Color-text-link-link);
@@ -95,10 +101,10 @@ body {
     line-height: 16px;
     text-align: left;
     font-variation-settings: "slnt" 0;
-    @include br-5;
+    @include mixins.br-5;
 
     &[aria-controls="create-formula"] {
-        @include br-10;
+        @include mixins.br-10;
     }
 }
 
@@ -126,7 +132,7 @@ body {
     background: var(--Color-input-bg-surface, #fdfdfd);
     display: flex;
     flex-direction: column;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .setting-input-field.input-field {
@@ -142,7 +148,7 @@ body {
     border: 0.66px solid var(--Color-input-border, #8a8a8a);
     height: 32px;
     padding-left: 12px;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .custom-checkbox-input {
@@ -180,7 +186,7 @@ body {
     align-items: center;
     justify-content: center;
     border: 0.66px solid var(--Color-input-border);
-    @include br-5;
+    @include mixins.br-5;
 }
 
 .custom-checkbox-checkmark {
@@ -190,7 +196,7 @@ body {
 .custom-checkbox-label-image {
     margin-left: 12px;
     border: 1px solid var(--Color-border-border);
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .custom-checkbox-label-title {
@@ -209,6 +215,11 @@ body {
     margin-bottom: 20px;
     background-color: white;
     border-bottom: 1px solid var(--Color-border-border, #e3e3e3);
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
     box-shadow:
         0px 4px 6px -2px #1a1a1a33,
         0px 1px 0px 0px #cccccc80 inset,
@@ -216,7 +227,7 @@ body {
         -1px 0px 0px 0px #00000021 inset,
         1px 0px 0px 0px #00000021 inset;
 
-    @include br-5;
+    @include mixins.br-5;
 }
 
 .tab {
@@ -231,7 +242,7 @@ body {
     background-color: white;
     width: 100%;
     height: 100%;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 thead {
@@ -273,7 +284,7 @@ tr:last-child td {
     align-items: center;
     padding: 0 6px;
     background: var(--Color-bg-fill-fill-transparent-secondary, #0000000f);
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .status-badge.active {
@@ -347,7 +358,7 @@ tr:last-child td {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .empty-state-img {
@@ -363,7 +374,7 @@ tr:last-child td {
     margin-top: 20px;
     padding: 24px;
     background-color: white;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .formula-title-field {
@@ -389,7 +400,7 @@ tr:last-child td {
 .formula-btn {
     width: 60px;
     height: 20px;
-    @include flex-center;
+    @include mixins.flex-center;
 }
 
 .formula-line:not(:first-child) {
@@ -409,7 +420,7 @@ tr:last-child td {
 }
 
 .formula-heading-icon {
-    @include flex-center;
+    @include mixins.flex-center;
     margin-left: 16px;
 }
 
@@ -430,7 +441,7 @@ tr:last-child td {
     margin-top: 24px;
     padding: 28px 22px;
     background: white;
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .input-description {
@@ -441,7 +452,7 @@ tr:last-child td {
     margin-top: 14px;
     padding: 12px;
     border: 1px solid var(--Color-input-border, #8a8a8a);
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .search-card[aria-controls="search-collections"] {
@@ -538,7 +549,7 @@ tr:last-child td {
     height: 40px;
     margin-right: 12px;
     border: 1px solid var(--Color-border-border);
-    @include br-10;
+    @include mixins.br-10;
 }
 
 .search-btn-save {
