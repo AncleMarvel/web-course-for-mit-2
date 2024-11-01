@@ -134,6 +134,9 @@ export default createStore({
          */
         REMOVE_SETTING(state, settingId) {
             state.settings = state.settings.filter(setting => setting.id !== settingId);
+        },
+        ADD_SETTING(state, setting) {
+            state.settings.push(setting);
         }
     },
     actions: {
@@ -143,6 +146,18 @@ export default createStore({
         removeSetting({ commit }, settingId) {
             // call the mutation
             commit('REMOVE_SETTING', settingId);
+        },
+        /**
+         * Remove the setting from the settings array
+         */
+        createSetting({ commit }, setting) {
+            // call the mutation
+            commit('ADD_SETTING', setting);
+        },
+        updateSetting({ commit }, setting) {
+            // call the mutation
+            commit('REMOVE_SETTING', setting.id);
+            commit('ADD_SETTING', setting);
         }
     },
     getters: {
@@ -152,6 +167,9 @@ export default createStore({
             const arraysOfFoundCurrencies = state.settings?.map(setting => setting.formulas.map(formula => formula.currency))?.flat();
             const arrayWithoutDuplicates = [...new Set(arraysOfFoundCurrencies)];
             return arrayWithoutDuplicates;
+        },
+        getSettingById: (state) => (settingId) => {
+            return state.settings.find(setting => setting.id === settingId);
         },
     },
 });
