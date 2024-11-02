@@ -148,7 +148,7 @@ export default createStore({
             commit('REMOVE_SETTING', settingId);
         },
         /**
-         * Remove the setting from the settings array
+         * Create the setting
          */
         createSetting({ commit }, setting) {
             // call the mutation

@@ -113,7 +113,7 @@ export default {
         editFormula(id = null) {
             const timestamp = new Date().getTime();
             const formulaId = id || `formula-${timestamp}`;
-            this.$router.push({ name: 'Formula', params: { id: formulaId } });
+            this.$router.push({ name: 'Formula', params: { formulaId, settingId: this.id } });
         },
         goHome() {
             this.$router.push({ name: 'Home' });

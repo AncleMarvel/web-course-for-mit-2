@@ -16,7 +16,7 @@ const routes = [
         props: true, 
     },
     {
-        path: '/formula/:id',
+        path: '/formula/:formulaId/:settingId',
         name: 'Formula',
         component: FormulaView,
         props: true,
