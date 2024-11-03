@@ -69,7 +69,7 @@
                             Cryptocurrency price update frequency. In milliseconds (like 1000ms == 1s)
                         </p>
                     </div>
-                    <SearchCrypto></SearchCrypto>
+                    <SearchCrypto @selectCrypto="selectCryptoHandle" :selectedCryptoId="formula.currency"></SearchCrypto>
                 </div>
             </div>
             <div class="formula-collections formula-column">
@@ -131,16 +131,20 @@ export default {
         goToSetting() {
             this.$router.push({ name: 'Setting', params: { id: this.settingId } });
         },
-        discardChanges() { 
+        discardChanges() {
             this.formula = JSON.parse(JSON.stringify(this.formulaBackup));
             this.wasSomethingChanged = false;
         },
-        saveChanges() { 
+        saveChanges() {
             const formulaIdx = this.setting.formulas.findIndex(formula => formula.id === this.formulaId);
             this.setting.formulas[formulaIdx] = this.formula;
             this.updateSettingAction(this.setting);
             this.formulaBackup = JSON.parse(JSON.stringify(this.formula));
             this.wasSomethingChanged = false;
+        },
+        selectCryptoHandle(currencyId) {
+            this.formula.currency = currencyId;
+            this.wasSomethingChanged = true;
         },
     },
     created() {

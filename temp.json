@@ -1,0 +1,227 @@
+[
+    {
+        "id": "bitcoin",
+        "name": "Bitcoin",
+        "api_symbol": "bitcoin",
+        "symbol": "BTC",
+        "market_cap_rank": 1,
+        "thumb": "https://coin-images.coingecko.com/coins/images/1/thumb/bitcoin.png",
+        "large": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png"
+    },
+    {
+        "id": "wrapped-bitcoin",
+        "name": "Wrapped Bitcoin",
+        "api_symbol": "wrapped-bitcoin",
+        "symbol": "WBTC",
+        "market_cap_rank": 15,
+        "thumb": "https://coin-images.coingecko.com/coins/images/7598/thumb/wrapped_bitcoin_wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png"
+    },
+    {
+        "id": "solv-btc",
+        "name": "Solv Protocol SolvBTC",
+        "api_symbol": "solv-btc",
+        "symbol": "SOLVBTC",
+        "market_cap_rank": 76,
+        "thumb": "https://coin-images.coingecko.com/coins/images/36800/thumb/solvBTC.png",
+        "large": "https://coin-images.coingecko.com/coins/images/36800/large/solvBTC.png"
+    },
+    {
+        "id": "coinbase-wrapped-btc",
+        "name": "Coinbase Wrapped BTC",
+        "api_symbol": "coinbase-wrapped-btc",
+        "symbol": "CBBTC",
+        "market_cap_rank": 86,
+        "thumb": "https://coin-images.coingecko.com/coins/images/40143/thumb/cbbtc.webp",
+        "large": "https://coin-images.coingecko.com/coins/images/40143/large/cbbtc.webp"
+    },
+    {
+        "id": "lombard-staked-btc",
+        "name": "Lombard Staked BTC",
+        "api_symbol": "lombard-staked-btc",
+        "symbol": "LBTC",
+        "market_cap_rank": 108,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39969/thumb/LBTC_Logo.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39969/large/LBTC_Logo.png"
+    },
+    {
+        "id": "solv-protocol-solvbtc-bbn",
+        "name": "Solv Protocol SolvBTC.BBN",
+        "api_symbol": "solv-protocol-solvbtc-bbn",
+        "symbol": "SOLVBTC.BBN",
+        "market_cap_rank": 115,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39384/thumb/unnamed.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39384/large/unnamed.png"
+    },
+    {
+        "id": "arbitrum-bridged-wbtc-arbitrum-one",
+        "name": "Arbitrum Bridged WBTC (Arbitrum One)",
+        "api_symbol": "arbitrum-bridged-wbtc-arbitrum-one",
+        "symbol": "WBTC",
+        "market_cap_rank": 119,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39532/thumb/wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39532/large/wbtc.png"
+    },
+    {
+        "id": "bitcoin-avalanche-bridged-btc-b",
+        "name": "Avalanche Bridged BTC (Avalanche)",
+        "api_symbol": "bitcoin-avalanche-bridged-btc-b",
+        "symbol": "BTC.B",
+        "market_cap_rank": 178,
+        "thumb": "https://coin-images.coingecko.com/coins/images/26115/thumb/btcb.png",
+        "large": "https://coin-images.coingecko.com/coins/images/26115/large/btcb.png"
+    },
+    {
+        "id": "tbtc",
+        "name": "tBTC",
+        "api_symbol": "tbtc",
+        "symbol": "TBTC",
+        "market_cap_rank": 222,
+        "thumb": "https://coin-images.coingecko.com/coins/images/11224/thumb/0x18084fba666a33d37592fa2633fd49a74dd93a88.png",
+        "large": "https://coin-images.coingecko.com/coins/images/11224/large/0x18084fba666a33d37592fa2633fd49a74dd93a88.png"
+    },
+    {
+        "id": "compound-wrapped-btc",
+        "name": "cWBTC",
+        "api_symbol": "compound-wrapped-btc",
+        "symbol": "CWBTC",
+        "market_cap_rank": 225,
+        "thumb": "https://coin-images.coingecko.com/coins/images/10823/thumb/cwbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/10823/large/cwbtc.png"
+    },
+    {
+        "id": "polygon-bridged-wbtc-polygon-pos",
+        "name": "Polygon Bridged WBTC (Polygon POS)",
+        "api_symbol": "polygon-bridged-wbtc-polygon-pos",
+        "symbol": "WBTC",
+        "market_cap_rank": 229,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39530/thumb/wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39530/large/wbtc.png"
+    },
+    {
+        "id": "ether-fi-staked-btc",
+        "name": "Ether.fi Staked BTC",
+        "api_symbol": "ether-fi-staked-btc",
+        "symbol": "EBTC",
+        "market_cap_rank": 240,
+        "thumb": "https://coin-images.coingecko.com/coins/images/50411/thumb/eBTC.png",
+        "large": "https://coin-images.coingecko.com/coins/images/50411/large/eBTC.png"
+    },
+    {
+        "id": "pumpbtc",
+        "name": "pumpBTC",
+        "api_symbol": "pumpbtc",
+        "symbol": "PUMPBTC",
+        "market_cap_rank": 266,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39232/thumb/200pxPumpBTCLogo.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39232/large/200pxPumpBTCLogo.png"
+    },
+    {
+        "id": "abtc",
+        "name": "aBTC",
+        "api_symbol": "abtc",
+        "symbol": "ABTC",
+        "market_cap_rank": 344,
+        "thumb": "https://coin-images.coingecko.com/coins/images/50837/thumb/aBTC_512.png",
+        "large": "https://coin-images.coingecko.com/coins/images/50837/large/aBTC_512.png"
+    },
+    {
+        "id": "lorenzo-stbtc",
+        "name": "Lorenzo stBTC",
+        "api_symbol": "lorenzo-stbtc",
+        "symbol": "STBTC",
+        "market_cap_rank": 369,
+        "thumb": "https://coin-images.coingecko.com/coins/images/50978/thumb/a.jpg",
+        "large": "https://coin-images.coingecko.com/coins/images/50978/large/a.jpg"
+    },
+    {
+        "id": "optimism-bridged-wbtc-optimism",
+        "name": "Optimism Bridged WBTC (Optimism)",
+        "api_symbol": "optimism-bridged-wbtc-optimism",
+        "symbol": "WBTC",
+        "market_cap_rank": 466,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39553/thumb/wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39553/large/wbtc.png"
+    },
+    {
+        "id": "ignition-fbtc",
+        "name": "Ignition FBTC",
+        "api_symbol": "ignition-fbtc",
+        "symbol": "FBTC",
+        "market_cap_rank": 548,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39182/thumb/FBTC_LOGO.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39182/large/FBTC_LOGO.png"
+    },
+    {
+        "id": "rabbitcoin-2",
+        "name": "RabBitcoin",
+        "api_symbol": "rabbitcoin-2",
+        "symbol": "RBTC",
+        "market_cap_rank": 651,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39910/thumb/256x256.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39910/large/256x256.png"
+    },
+    {
+        "id": "solv-protocol-solvbtc-core",
+        "name": "Solv Protocol SolvBTC.CORE",
+        "api_symbol": "solv-protocol-solvbtc-core",
+        "symbol": "SOLVBTC.CORE",
+        "market_cap_rank": 682,
+        "thumb": "https://coin-images.coingecko.com/coins/images/50781/thumb/20241016-213746.jpeg",
+        "large": "https://coin-images.coingecko.com/coins/images/50781/large/20241016-213746.jpeg"
+    },
+    {
+        "id": "avalanche-old-bridged-wbtc-avalanche",
+        "name": "Avalanche Bridged WBTC (Avalanche)",
+        "api_symbol": "avalanche-old-bridged-wbtc-avalanche",
+        "symbol": "WBTC",
+        "market_cap_rank": 712,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39529/thumb/wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39529/large/wbtc.png"
+    },
+    {
+        "id": "general-layer-btc",
+        "name": "General-Layer BTC",
+        "api_symbol": "general-layer-btc",
+        "symbol": "GL-BTC",
+        "market_cap_rank": 756,
+        "thumb": "https://coin-images.coingecko.com/coins/images/50844/thumb/IMG_20241019_163500_165.jpg",
+        "large": "https://coin-images.coingecko.com/coins/images/50844/large/IMG_20241019_163500_165.jpg"
+    },
+    {
+        "id": "swell-restaked-btc",
+        "name": "Swell Restaked BTC",
+        "api_symbol": "swell-restaked-btc",
+        "symbol": "SWBTC",
+        "market_cap_rank": 801,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39682/thumb/swBTC200x200.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39682/large/swBTC200x200.png"
+    },
+    {
+        "id": "cronos-bridged-wbtc-cronos",
+        "name": "Cronos Bridged WBTC (Cronos)",
+        "api_symbol": "cronos-bridged-wbtc-cronos",
+        "symbol": "WBTC",
+        "market_cap_rank": 811,
+        "thumb": "https://coin-images.coingecko.com/coins/images/39555/thumb/wbtc.png",
+        "large": "https://coin-images.coingecko.com/coins/images/39555/large/wbtc.png"
+    },
+    {
+        "id": "renbtc",
+        "name": "renBTC",
+        "api_symbol": "renbtc",
+        "symbol": "RENBTC",
+        "market_cap_rank": 1059,
+        "thumb": "https://coin-images.coingecko.com/coins/images/11370/thumb/Bitcoin.jpg",
+        "large": "https://coin-images.coingecko.com/coins/images/11370/large/Bitcoin.jpg"
+    },
+    {
+        "id": "chain-key-bitcoin",
+        "name": "Chain-key Bitcoin",
+        "api_symbol": "chain-key-bitcoin",
+        "symbol": "CKBTC",
+        "market_cap_rank": 1179,
+        "thumb": "https://coin-images.coingecko.com/coins/images/33818/thumb/01_ckBTC_Token_HEX__4x.png",
+        "large": "https://coin-images.coingecko.com/coins/images/33818/large/01_ckBTC_Token_HEX__4x.png"
+    }
+]
