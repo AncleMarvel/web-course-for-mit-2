@@ -73,12 +73,23 @@ export default createStore({
         currencies: (state) => state.currencies,
         settings: (state) => state.settings,
         usedCurrencies: (state) => {
-            const arraysOfFoundCurrencies = state.settings?.map(setting => setting.formulas.map(formula => formula.currency))?.flat();
+            const arraysOfFoundCurrencies = state.settings?.map(setting => {
+                const currencies = [];
+                setting.formulas.forEach(formula => {
+                    if (formula.currency) {
+                        currencies.push(formula.currency);
+                    }
+                });
+                return currencies;
+            })?.flat();
             const arrayWithoutDuplicates = [...new Set(arraysOfFoundCurrencies)];
             return arrayWithoutDuplicates;
         },
         getSettingById: (state) => (settingId) => {
             return state.settings.find(setting => setting.id === settingId);
         },
+        getProducts: (state) => {
+            return state.products;
+        }
     },
 });

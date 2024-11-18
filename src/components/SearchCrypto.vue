@@ -12,7 +12,7 @@
             <div class="search-result search-currency-result" v-for="(currency, idx) in filteredCurrencies" :key="idx">
                 <div class="search-currency-result__radio-button" @click="expandSearch">
                     <input type="radio" name="currency" :id="`currency-${currency.id}`" :value="currency"
-                        :checked="selectedCurrency.id === currency.id" v-model="selectedCurrency"
+                        :checked="selectedCurrency?.id === currency?.id" v-model="selectedCurrency"
                         class="search-currency-result__radio-button_input hidden" />
                     <label :for="`currency-${currency.id}`" class="search-currency-result__radio-button_label">
                         <div class="crypto-search-result__icon-wrapper">
