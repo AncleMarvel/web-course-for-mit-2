@@ -1,6 +1,6 @@
 <template>
     <div class="formula-settings-card" :data-opened="isOpenedSearch">
-        <div class="formula-heading"  @click="toggleSearchProducts">
+        <div class="formula-heading" @click="toggleSearchProducts">
             <h2 class="heading-lg">
                 Add products
             </h2>
@@ -67,10 +67,12 @@
             </div>
         </div>
         <div class="formula-settings-card-controls">
-            <button @click="toggleSearchProducts" class="search-btn-cancel btn btn-secondary" aria-controls="cancel-selected-products">
+            <button @click="toggleSearchProducts" class="search-btn-cancel btn btn-secondary"
+                aria-controls="cancel-selected-products">
                 Cancel
             </button>
-            <button @click="saveProducts" class="search-btn-save btn btn-primary" aria-controls="save-selected-products">
+            <button @click="saveProducts" class="search-btn-save btn btn-primary"
+                aria-controls="save-selected-products">
                 Save
             </button>
         </div>
@@ -138,8 +140,19 @@ export default {
             }
         },
         saveProducts() {
-            // this.$emit('save', this.selectedProducts, this.selectedVariants);
-            // this.toggleSearchProducts();
+            const productWithSelectedVariants = JSON.parse(JSON.stringify(this.selectedProducts));
+            productWithSelectedVariants.forEach(product => {
+                const newVariants = [];
+                product.node.variants.edges.forEach(variant => {
+                    if (this.selectedVariants.find(selectedVariant => selectedVariant.node.id === variant.node.id)) {
+                        newVariants.push(variant);
+                    }
+                });
+                product.node.variants.edges = newVariants;
+            });
+            
+            this.$emit('save', productWithSelectedVariants);
+            this.toggleSearchProducts();
         },
         deselectProducts() {
             this.selectedProducts = [];

@@ -69,12 +69,13 @@
                             Cryptocurrency price update frequency. In milliseconds (like 1000ms == 1s)
                         </p>
                     </div>
-                    <SearchCrypto @selectCrypto="selectCryptoHandle" :selectedCryptoId="formula.currency"></SearchCrypto>
+                    <SearchCrypto @selectCrypto="selectCryptoHandle" :selectedCryptoId="formula.currency">
+                    </SearchCrypto>
                 </div>
             </div>
             <div class="formula-collections formula-column">
                 <SearchCollections></SearchCollections>
-                <SearchProducts></SearchProducts>
+                <SearchProducts @save="selectProductsHandler"></SearchProducts>
             </div>
         </div>
     </div>
@@ -122,6 +123,10 @@ export default {
         },
     },
     methods: {
+        selectProductsHandler(products) {
+            this.formula.targets.products = products;
+            this.wasSomethingChanged = true;
+        },
         ...mapActions({
             updateSettingAction: 'updateSetting',
         }),
