@@ -3,8 +3,8 @@
 1. Install npm & node.js
 2. Open your project folder in vs code and run command:
    `npm init`
-   `npm install vue@3 vue-router@4 vuex@4 sass lodash`
-   `npm install vite @vitejs/plugin-vue sass-embedded sass --save-dev`
+   `npm install vue@3 vue-router@4 vuex@4 sass lodash express dotenv node-fetch cors`
+   `npm install vite @vitejs/plugin-vue sass-embedded sass --save-dev concurrently nodemon`
 
 3. Create a file vite.config.mjs:
 ```
